@@ -12,5 +12,32 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  return tutorials.map(element => element.split(' ').map(word => word.charAt(0).toUpperCase() + word.substring(1)).join(' ')
+  )
 }
+
+// const titleCased = () => {
+//   return tutorials;
+// }
+
+//--WITHOUT .MAP
+// const newTitles = [];
+
+// for(const titles of tutorials) {
+//   newTitles.push('Title:' + titles);
+// }
+
+//--.MAP TELLS OTHERS A NEW ARRAY IS CREATED WITH MODS
+// function titleNames(titles) {
+//   return 'Title:' + titles;
+// }
+// const newTitles = tutorials.map(titleNames);
+
+//--ANON FUNCTION
+// const newTitles = tutorials.map(function (titles) {
+//   return 'Title:' + titles;
+// })
+
+//--CLEAN UP ANON FUNCTION
+// const newTitles = tutorials.map((titles) => 'Title:' + titles);
+
